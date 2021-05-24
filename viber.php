@@ -110,20 +110,7 @@ class Message implements ViberMessage
 
     public function getPostDataJson()
     {
-        $json = array(
-
-            "receiver" => $this->getReceiver(),
-            "min_api_version" => $this->getMinAPIVersion(),
-            "sender" => array(
-                "name" => $this->getSender()->getName(),
-                "avatar" => $this->getSender()->getAvatar(),
-            ),
-            "tracking_data" => "tracking_data",
-            "type" => $this->getType()
-        );
-        $json = json_encode($json);
-        echo ($json);
-        return $json;
+        return json_encode($this);
     }
 }
 
@@ -143,25 +130,25 @@ class TextMessage extends Message
         return $this->text;
     }
 
-    public function getPostDataJson()
-    {
-        $json = array(
+    // public function getPostDataJson()
+    // {
+    //     $json = array(
 
-            "receiver" => $this->getReceiver(),
-            "min_api_version" => $this->getMinAPIVersion(),
-            "sender" => array(
-                "name" => $this->getSender()->getName(),
-                "avatar" => $this->getSender()->getAvatar(),
-            ),
-            "tracking_data" => "tracking_data",
-            "type" => $this->getType(),
-            "text" => $this->getText()
-        );
+    //         "receiver" => $this->getReceiver(),
+    //         "min_api_version" => $this->getMinAPIVersion(),
+    //         "sender" => array(
+    //             "name" => $this->getSender()->getName(),
+    //             "avatar" => $this->getSender()->getAvatar(),
+    //         ),
+    //         "tracking_data" => "tracking_data",
+    //         "type" => $this->getType(),
+    //         "text" => $this->getText()
+    //     );
 
-        $json = json_encode($json);
-        echo ($json);
-        return $json;
-    }
+    //     $json = json_encode($json);
+    //     echo ($json);
+    //     return $json;
+    // }
 }
 
 
@@ -195,26 +182,26 @@ class PictureMessage extends TextMessage
         return $this->thumbnail;
     }
 
-    public function getPostDataJson()
-    {
-        $json = array(
+    // public function getPostDataJson()
+    // {
+    //     $json = array(
 
-            "receiver" => $this->getReceiver(),
-            "min_api_version" => $this->getMinAPIVersion(),
-            "sender" => array(
-                "name" => $this->getSender()->getName(),
-                "avatar" => $this->getSender()->getAvatar(),
-            ),
-            "tracking_data" => "tracking_data",
-            "type" => $this->getType(),
-            "text" => $this->getText(),
-            "media" => $this->getMedia(),
-            "thumbnail" => $this->getThumbnail()
-        );
-        $json = json_encode($json);
-        echo ($json);
-        return $json;
-    }
+    //         "receiver" => $this->getReceiver(),
+    //         "min_api_version" => $this->getMinAPIVersion(),
+    //         "sender" => array(
+    //             "name" => $this->getSender()->getName(),
+    //             "avatar" => $this->getSender()->getAvatar(),
+    //         ),
+    //         "tracking_data" => "tracking_data",
+    //         "type" => $this->getType(),
+    //         "text" => $this->getText(),
+    //         "media" => $this->getMedia(),
+    //         "thumbnail" => $this->getThumbnail()
+    //     );
+    //     $json = json_encode($json);
+    //     echo ($json);
+    //     return $json;
+    // }
 }
 
 class VideoMessage extends Message
@@ -270,28 +257,28 @@ class VideoMessage extends Message
         return $this->duration;
     }
 
-    public function getPostDataJson()
-    {
-        $json = array(
+    // public function getPostDataJson()
+    // {
+    //     $json = array(
 
-            "receiver" => $this->getReceiver(),
-            "min_api_version" => $this->getMinAPIVersion(),
-            "sender" => array(
-                "name" => $this->getSender()->getName(),
-                "avatar" => $this->getSender()->getAvatar(),
-            ),
-            "tracking_data" => "tracking_data",
-            "type" => $this->getType(),
-            "media" => $this->getMedia(),
-            "thumbnail" => $this->getThumbnail(),
-            "size" => $this->getSize(),
-            "duration" => $this->getDuration()
-        );
+    //         "receiver" => $this->getReceiver(),
+    //         "min_api_version" => $this->getMinAPIVersion(),
+    //         "sender" => array(
+    //             "name" => $this->getSender()->getName(),
+    //             "avatar" => $this->getSender()->getAvatar(),
+    //         ),
+    //         "tracking_data" => "tracking_data",
+    //         "type" => $this->getType(),
+    //         "media" => $this->getMedia(),
+    //         "thumbnail" => $this->getThumbnail(),
+    //         "size" => $this->getSize(),
+    //         "duration" => $this->getDuration()
+    //     );
 
-        $json = json_encode($json);
-        echo ($json);
-        return $json;
-    }
+    //     $json = json_encode($json);
+    //     echo ($json);
+    //     return $json;
+    // }
 }
 
 class FileMessage extends Message
@@ -338,27 +325,27 @@ class FileMessage extends Message
         return $this->media;
     }
 
-    public function getPostDataJson()
-    {
-        $json = array(
+    // public function getPostDataJson()
+    // {
+    //     $json = array(
 
-            "receiver" => $this->getReceiver(),
-            "min_api_version" => $this->getMinAPIVersion(),
-            "sender" => array(
-                "name" => $this->getSender()->getName(),
-                "avatar" => $this->getSender()->getAvatar(),
-            ),
-            "tracking_data" => "tracking_data",
-            "type" => $this->getType(),
-            "media" => $this->getMedia(),
-            "size" => $this->getSize(),
-            "file_name" => $this->getFilename()
-        );
+    //         "receiver" => $this->getReceiver(),
+    //         "min_api_version" => $this->getMinAPIVersion(),
+    //         "sender" => array(
+    //             "name" => $this->getSender()->getName(),
+    //             "avatar" => $this->getSender()->getAvatar(),
+    //         ),
+    //         "tracking_data" => "tracking_data",
+    //         "type" => $this->getType(),
+    //         "media" => $this->getMedia(),
+    //         "size" => $this->getSize(),
+    //         "file_name" => $this->getFilename()
+    //     );
 
-        $json = json_encode($json);
-        echo ($json);
-        return $json;
-    }
+    //     $json = json_encode($json);
+    //     echo ($json);
+    //     return $json;
+    // }
 }
 
 class Contact
@@ -408,28 +395,28 @@ class ContactMessage extends Message
         return $this->contact;
     }
 
-    public function getPostDataJson()
-    {
-        $json = array(
+    // public function getPostDataJson()
+    // {
+    // $json = array(
 
-            "receiver" => $this->getReceiver(),
-            "min_api_version" => $this->getMinAPIVersion(),
-            "sender" => array(
-                "name" => $this->getSender()->getName(),
-                "avatar" => $this->getSender()->getAvatar(),
-            ),
-            "tracking_data" => "tracking_data",
-            "type" => $this->getType(),
-            "contact" => array(
-                "name" => $this->getContact()->getName(),
-                "phone_number" => $this->getContact()->getPhoneNumber()
-            )
-        );
+    //     "receiver" => $this->getReceiver(),
+    //     "min_api_version" => $this->getMinAPIVersion(),
+    //     "sender" => array(
+    //         "name" => $this->getSender()->getName(),
+    //         "avatar" => $this->getSender()->getAvatar(),
+    //     ),
+    //     "tracking_data" => "tracking_data",
+    //     "type" => $this->getType(),
+    //     "contact" => array(
+    //         "name" => $this->getContact()->getName(),
+    //         "phone_number" => $this->getContact()->getPhoneNumber()
+    //     )
+    // );
 
-        $json = json_encode($json);
-        echo ($json);
-        return $json;
-    }
+    // $json = json_encode($json);
+    // echo ($json);
+    // return $json;
+    // }
 }
 
 class Location
@@ -483,29 +470,29 @@ class LocationMessage extends Message
         return $this->location;
     }
 
-    public function getPostDataJson()
-    {
-        $json = array(
+    // public function getPostDataJson()
+    // {
+    //     $json = array(
 
-            "receiver" => $this->getReceiver(),
-            "min_api_version" => $this->getMinAPIVersion(),
-            "sender" => array(
-                "name" => $this->getSender()->getName(),
-                "avatar" => $this->getSender()->getAvatar(),
-            ),
-            "tracking_data" => "tracking_data",
-            "type" => $this->getType(),
-            "location" => array(
-                "lat" => $this->getLocation()->getLat(),
-                "lon" => $this->getLocation()->getLng()
-            )
+    //         "receiver" => $this->getReceiver(),
+    //         "min_api_version" => $this->getMinAPIVersion(),
+    //         "sender" => array(
+    //             "name" => $this->getSender()->getName(),
+    //             "avatar" => $this->getSender()->getAvatar(),
+    //         ),
+    //         "tracking_data" => "tracking_data",
+    //         "type" => $this->getType(),
+    //         "location" => array(
+    //             "lat" => $this->getLocation()->getLat(),
+    //             "lon" => $this->getLocation()->getLng()
+    //         )
 
-        );
+    //     );
 
-        $json = json_encode($json);
-        echo ($json);
-        return $json;
-    }
+    //     $json = json_encode($json);
+    //     echo ($json);
+    //     return $json;
+    // }
 }
 
 class URLMessage extends Message
@@ -523,26 +510,26 @@ class URLMessage extends Message
         return $this->media;
     }
 
-    public function getPostDataJson()
-    {
-        $json = array(
+    // public function getPostDataJson()
+    // {
+    //     $json = array(
 
-            "receiver" => $this->getReceiver(),
-            "min_api_version" => $this->getMinAPIVersion(),
-            "sender" => array(
-                "name" => $this->getSender()->getName(),
-                "avatar" => $this->getSender()->getAvatar(),
-            ),
-            "tracking_data" => "tracking_data",
-            "type" => $this->getType(),
-            "media" => $this->getMedia()
+    //         "receiver" => $this->getReceiver(),
+    //         "min_api_version" => $this->getMinAPIVersion(),
+    //         "sender" => array(
+    //             "name" => $this->getSender()->getName(),
+    //             "avatar" => $this->getSender()->getAvatar(),
+    //         ),
+    //         "tracking_data" => "tracking_data",
+    //         "type" => $this->getType(),
+    //         "media" => $this->getMedia()
 
-        );
+    //     );
 
-        $json = json_encode($json);
-        echo ($json);
-        return $json;
-    }
+    //     $json = json_encode($json);
+    //     echo ($json);
+    //     return $json;
+    // }
 }
 
 //    class TextMessageBroadcast extends TextMessage{
@@ -716,7 +703,7 @@ class ButtonCarrousel
     }
 }
 
-class CarousselMessage
+class CarousselMessage implements ViberMessage
 {
 
     private $receiver;
@@ -763,6 +750,11 @@ class CarousselMessage
     function getRichMedia()
     {
         return $this->rich_media;
+    }
+
+    public function getPostDataJson()
+    {
+        return json_encode($this);
     }
 }
 
